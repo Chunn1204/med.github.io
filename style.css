@@ -412,10 +412,65 @@ section {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 10px;
+  }
+
+  nav a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 4px 0;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+    padding: 0 16px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dropdown-content {
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown-content a {
+    background: #f1eeff;
+    border-radius: 8px;
+    margin: 6px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 22px 6vw;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 14px;
   }
 }
