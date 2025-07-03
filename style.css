@@ -473,4 +473,15 @@ section {
     line-height: 1.8;
     margin-bottom: 14px;
   }
+
+  .hero p,
+  .hero ul li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .hero ul {
+    font-size: 0.9rem;
+    margin: 16px 0;
+  }
 }
