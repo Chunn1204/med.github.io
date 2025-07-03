@@ -350,3 +350,64 @@ section {
   background-color: #5e6bf5;
 }
 
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+    padding: 0 12px;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px 0;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .dropdown-content a {
+    background-color: #eee;
+    margin: 4px 0;
+    font-size: 1rem;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .disease-info > div {
+    padding: 12px;
+  }
+
+  .story-card {
+    padding: 12px;
+  }
+
+  .story-card img {
+    width: 48px;
+    height: 48px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .donate-btn, .share-btn {
+    padding: 8px 20px;
+    font-size: 1rem;
+  }
+
+  .back-to-top {
+    font-size: 0.75rem;
+    padding: 8px 14px;
+  }
+}
