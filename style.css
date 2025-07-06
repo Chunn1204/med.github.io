@@ -171,15 +171,16 @@ dd {
 
 footer {
   text-align: center;
-  color: #aaa;
+  color: #fff;
   font-size: 0.98rem;
   padding: 24px 6px 18px 6px;
   margin-top: 38px;
   border-top: 1px solid #e3dfff;
+  background-color: #76068c;
 }
 
 footer a {
-  color: #8b79df;
+  color: #f6ccff;
   text-decoration: underline;
 }
 
