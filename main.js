@@ -9,3 +9,20 @@
     const newTop = Math.max(initialTop - scrollY, minTop);
     icons.style.top = newTop + 'px';
   });
+
+  window.addEventListener('scroll', function () {
+  const topBtn = document.querySelector('.back-to-top');
+  const footer = document.getElementById('site-footer');
+
+  if (!topBtn || !footer) return;
+
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  // 當 footer 進入視窗底部 60px 以內，調整 top 鈕向上移
+  if (footerTop < windowHeight - 60) {
+    topBtn.style.bottom = (windowHeight - footerTop + 20) + 'px';
+  } else {
+    topBtn.style.bottom = '40px'; // 正常懸浮位置
+  }
+});
