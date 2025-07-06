@@ -354,14 +354,6 @@ section {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* ✅ hover 陰影加強 */
 }
 
-@media (max-width: 480px) {
-  .back-to-top {
-    width: 40px;
-    height: 40px;
-    bottom: 30px;
-    right: 14px;
-    box-shadow: none;
-  }
 
 @media (max-width: 480px) {
   header h1 {
@@ -558,39 +550,6 @@ section {
 
   .icon-btn span {
     font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .fixed-side-icons {
-    top: 320px; /* ✅ 調高距離避免貼到 header */
-    left: 8px;
-    gap: 14px;
-  }
-
-  .icon-btn {
-    background-color: #fff;  /* ✅ 白底 */
-    padding: 8px 6px;
-    border-radius: 14px;     /* ✅ 圓角 */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* ✅ 微陰影增加可視性 */
-    align-items: center;
-    width: fit-content;
-  }
-
-  .icon-btn img {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #fff;
-  }
-
-  .icon-btn span {
-    font-size: 0.85rem;
-    color: #333;
-    margin-top: 6px;
-    text-align: center;
-    white-space: nowrap;
   }
 }
 
