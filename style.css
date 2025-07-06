@@ -491,28 +491,17 @@ section {
   }
 }
 
-/* 桌機版（預設）使用 top 固定位置 */
+/* 左側固定角色導覽 */
 .fixed-side-icons {
   position: fixed;
-  top: 200px;
+  top: 200px;              /* 初始位置（配合 JS 控制） */
   left: 20px;
   display: flex;
   flex-direction: column;
   gap: 18px;
   z-index: 100;
-  transition: top 0.2s ease;
+  transition: top 0.2s ease;  /* 平滑移動效果 */
 }
-
-/* 手機版改用 bottom 定位（避免 footer） */
-@media (max-width: 768px) {
-  .fixed-side-icons {
-    top: auto;
-    bottom: 80px; /* 初始離底部 80px */
-    left: 12px;
-    transition: bottom 0.2s ease;
-  }
-}
-
 
 /* 每個角色按鈕樣式 */
 .icon-btn {
