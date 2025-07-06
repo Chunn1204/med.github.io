@@ -26,3 +26,8 @@
     topBtn.style.bottom = '40px'; // 正常懸浮位置
   }
 });
+
+// ☰ 開關選單功能
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  document.querySelector('nav').classList.toggle('show');
+});
