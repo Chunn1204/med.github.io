@@ -31,3 +31,29 @@
 document.querySelector('.menu-toggle').addEventListener('click', () => {
   document.querySelector('nav').classList.toggle('show');
 });
+
+window.addEventListener('scroll', function () {
+  const topBtn = document.querySelector('.back-to-top');
+  const sideIcons = document.querySelector('.fixed-side-icons');
+  const footer = document.getElementById('site-footer');
+  const windowHeight = window.innerHeight;
+  const footerTop = footer.getBoundingClientRect().top;
+
+  if (!topBtn || !footer || !sideIcons) return;
+
+  // ✅ 調整 Top 鍵避開 footer（你原本已有這段，可保留）
+  if (footerTop < windowHeight - 60) {
+    topBtn.style.bottom = (windowHeight - footerTop + 20) + 'px';
+  } else {
+    topBtn.style.bottom = '40px';
+  }
+
+  // ✅ 調整左側角色 icon（僅手機版 bottom 模式下生效）
+  if (window.innerWidth <= 768) {
+    if (footerTop < windowHeight - 80) {
+      sideIcons.style.bottom = (windowHeight - footerTop + 40) + 'px';
+    } else {
+      sideIcons.style.bottom = '80px';
+    }
+  }
+});
