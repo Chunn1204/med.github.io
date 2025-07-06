@@ -1,188 +1,215 @@
+body {
+  font-family: "Segoe UI", "微軟正黑體", Arial, sans-serif;
+  background: #f7f8fc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: "Segoe UI", "微軟正黑體", Arial, sans-serif;
-      background: #f7f8fc;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: linear-gradient(90deg, #7f90ff 0%, #e260dc 100%);
-      color: #fff;
-      padding: 32px 0 16px 0;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0 0 10px 0;
-      font-size: 2.2rem;
-      letter-spacing: 2px;
-    }
-    nav {
-      margin: 10px 0;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 16px;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: border-bottom 0.2s;
-      border-bottom: 2px solid transparent;
-    }
-    nav a:hover {
-      border-bottom: 2px solid #fff;
-    }
-    .hero {
-      text-align: center;
-      background: #edeaff;
-      padding: 32px 12px 24px 12px;
-    }
-    .hero h2 {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-      color: #6a59d7;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #888;
-    }
-    .hero img {
-      width: 130px;
-      margin-top: 12px;
-    }
-    section {
-      max-width: 900px;
-      margin: 40px auto 0 auto;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px rgba(140,120,255,0.08);
-      padding: 28px 18px 32px 18px;
-    }
-    section h2 {
-      color: #7456c5;
-      margin-top: 0;
-      font-size: 1.35rem;
-      margin-bottom: 18px;
-    }
-    .disease-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-bottom: 18px;
-    }
-    .disease-info > div {
-      flex: 1 1 260px;
-      background: #f4f1fa;
-      border-radius: 10px;
-      padding: 18px 15px;
-      min-width: 220px;
-      box-sizing: border-box;
-    }
-    .disease-info h3 {
-      color: #6757b7;
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 1.08rem;
-    }
-    .disease-info ul {
-      padding-left: 20px;
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    .story-card {
-      background: #f9f6ff;
-      border-left: 4px solid #7f90ff;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      padding: 15px 20px 15px 16px;
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    .story-card img {
-      width: 58px;
-      height: 58px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #d2ccff;
-    }
-    .story-card blockquote {
-      margin: 0;
-      font-size: 1.08rem;
-      color: #43317c;
-    }
-    .story-card span {
-      display: block;
-      margin-top: 6px;
-      font-size: 0.98rem;
-      color: #9b89c9;
-    }
-    .share-btn, .donate-btn {
-      display: inline-block;
-      margin: 16px 0 0 0;
-      padding: 10px 28px;
-      background: linear-gradient(90deg, #8a7fff, #b6a0ff);
-      color: #fff;
-      font-size: 1.04rem;
-      border: none;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(120,120,255,0.06);
-      cursor: pointer;
-      transition: background 0.22s;
-    }
-    .share-btn:hover, .donate-btn:hover {
-      background: linear-gradient(90deg, #b6a0ff, #8a7fff);
-    }
-    ul {
-      margin: 0 0 0 20px;
-      padding: 0;
-    }
-    dl {
-      margin: 0;
-      padding: 0;
-    }
-    dt {
-      font-weight: bold;
-      color: #6a59d7;
-      margin-top: 16px;
-      margin-bottom: 4px;
-    }
-    dd {
-      margin-left: 0;
-      margin-bottom: 8px;
-    }
-    footer {
-      text-align: center;
-      color: #aaa;
-      font-size: 0.98rem;
-      padding: 24px 6px 18px 6px;
-      margin-top: 38px;
-      border-top: 1px solid #e3dfff;
-    }
-    footer a {
-      color: #8b79df;
-      text-decoration: underline;
-    }
-    @media (max-width: 700px) {
-      .disease-info {
-        flex-direction: column;
-        gap: 12px;
-      }
-      section {
-        padding: 18px 4vw 26px 4vw;
-      }
-      .story-card {
-        flex-direction: column;
-        gap: 6px;
-        padding: 10px 10px 10px 14px;
-      }
-    }
+header {
+  background: linear-gradient(90deg, #7f90ff 0%, #e260dc 100%);
+  color: #fff;
+  padding: 32px 0 16px 0;
+  text-align: center;
+}
+    
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
 
-    #share {
+nav {
+    margin: 10px 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.hero {
+  text-align: center;
+  background: #edeaff;
+  padding: 32px 12px 24px 12px;
+}
+
+.hero h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #6a59d7;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.hero img {
+  width: 130px;
+  margin-top: 12px;
+}
+
+section {
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(140,120,255,0.08);
+  padding: 28px 18px 32px 18px;
+}
+
+section h2 {
+  color: #7456c5;
+  margin-top: 0;
+  font-size: 1.35rem;
+  margin-bottom: 18px;
+}
+
+.disease-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.disease-info > div {
+  flex: 1 1 260px;
+  background: #f4f1fa;
+  border-radius: 10px;
+  padding: 18px 15px;
+  min-width: 220px;
+  box-sizing: border-box;
+}
+    
+.disease-info h3 {
+  color: #6757b7;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.08rem;
+}
+    
+.disease-info ul {
+  padding-left: 20px;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+    
+.story-card {
+  background: #f9f6ff;
+  border-left: 4px solid #7f90ff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px 20px 15px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+    
+.story-card img {
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #d2ccff;
+}
+    
+.story-card blockquote {
+  margin: 0;
+  font-size: 1.08rem;
+  color: #43317c;
+}
+
+.story-card span {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.98rem;
+  color: #9b89c9;
+}
+
+.share-btn, .donate-btn {
+  display: inline-block;
+  margin: 16px 0 0 0;
+  padding: 10px 28px;
+  background: linear-gradient(90deg, #8a7fff, #b6a0ff);
+  color: #fff;
+  font-size: 1.04rem;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(120,120,255,0.06);
+  cursor: pointer;
+  transition: background 0.22s;
+}
+
+.share-btn:hover, .donate-btn:hover {
+  background: linear-gradient(90deg, #b6a0ff, #8a7fff);
+}
+
+ul {
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+dt {
+  font-weight: bold;
+  color: #6a59d7;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: 8px;
+}
+
+footer {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.98rem;
+  padding: 24px 6px 18px 6px;
+  margin-top: 38px;
+  border-top: 1px solid #e3dfff;
+}
+
+footer a {
+  color: #8b79df;
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .disease-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+  section {
+    padding: 18px 4vw 26px 4vw;
+  }
+  .story-card {
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 10px 10px 14px;
+  }
+}
+
+#share {
   max-width: 900px;
   margin: 40px auto;
   background: #fff9ff;
@@ -276,28 +303,6 @@
   overflow: visible; /* 確保不裁切內部元素 */
 }
 
-
-.back-to-top {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 10px 20px;
-  background-color: #7f90ff;
-  color: #fff;
-  font-size: 0.88rem;
-  text-decoration: none;
-  font-weight: 500;
-  border-radius: 14px 0 0 0; /* 圓角：右下 */
-  box-shadow: 0 2px 12px rgba(140, 120, 255, 0.08); /* 陰影與 section 一致 */
-  transition: background 0.3s;
-  z-index: 10; /* 確保不被內部元素蓋住 */
-}
-
-
-.back-to-top:hover {
-  background-color: #6f7fe0;
-}
-
 #events {
   max-width: 900px;
   margin: 40px auto;
@@ -331,24 +336,34 @@ section {
 }
 
 .back-to-top {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 10px 20px;
-  background-color: #7f90ff;
-  color: #fff;
-  font-size: 0.88rem;
-  text-decoration: none;
-  font-weight: 500;
-  border-radius: 14px 0 0 0; /* 右下角貼合 section 的圓角 */
-  box-shadow: 0 2px 12px rgba(140, 120, 255, 0.08); /* 與 section 陰影一致 */
-  transition: background 0.3s;
-  z-index: 10;
+  position: fixed;
+  bottom: 40px;
+  right: 24px;
+  z-index: 999;
+  display: inline-block;
+  width: 50px;    /* 可根據圖檔大小調整 */
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 50%;
 }
 
-.back-to-top:hover {
-  background-color: #5e6bf5;
+.back-to-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
+
+/* 滑鼠移上去有微放大動畫 */
+.back-to-top:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* ✅ hover 陰影加強 */
+}
+
 
 @media (max-width: 480px) {
   header h1 {
@@ -485,3 +500,67 @@ section {
     margin: 16px 0;
   }
 }
+
+/* 左側固定角色導覽 */
+.fixed-side-icons {
+  position: fixed;
+  top: 200px;              /* 初始位置（配合 JS 控制） */
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 100;
+  transition: top 0.2s ease;  /* 平滑移動效果 */
+}
+
+/* 每個角色按鈕樣式 */
+.icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* 圖片按鈕 */
+.icon-btn img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+
+/* 滑過放大效果 */
+.icon-btn:hover img {
+  transform: scale(1.08);
+}
+
+/* 下方文字提示 */
+.icon-btn span {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #6a59d7;
+  font-weight: 500;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+/* 手機版可調整大小與位置 */
+@media (max-width: 600px) {
+  .fixed-side-icons {
+    top: 240px;
+    left: 8px;
+    gap: 12px;
+  }
+
+  .icon-btn img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .icon-btn span {
+    font-size: 0.85rem;
+  }
+}
+
