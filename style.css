@@ -491,17 +491,28 @@ section {
   }
 }
 
-/* 左側固定角色導覽 */
+/* 桌機版（預設）使用 top 固定位置 */
 .fixed-side-icons {
   position: fixed;
-  top: 200px;              /* 初始位置（配合 JS 控制） */
+  top: 200px;
   left: 20px;
   display: flex;
   flex-direction: column;
   gap: 18px;
   z-index: 100;
-  transition: top 0.2s ease;  /* 平滑移動效果 */
+  transition: top 0.2s ease;
 }
+
+/* 手機版改用 bottom 定位（避免 footer） */
+@media (max-width: 768px) {
+  .fixed-side-icons {
+    top: auto;
+    bottom: 80px; /* 初始離底部 80px */
+    left: 12px;
+    transition: bottom 0.2s ease;
+  }
+}
+
 
 /* 每個角色按鈕樣式 */
 .icon-btn {
@@ -553,7 +564,7 @@ section {
   }
 }
 
-/* ☰ 漢堡按鈕預設隱藏，只在手機版顯示 */
+/* ☰ 漢堡按鈕 */
 .menu-toggle {
   display: none;
   background: none;
@@ -561,13 +572,13 @@ section {
   font-size: 2rem;
   color: white;
   position: absolute;
-  top: 22px;
-  right: 20px;
+  top: 20px;
+  left: 16px;
   z-index: 1001;
   cursor: pointer;
 }
 
-/* 手機版才顯示 ☰ 並改變導覽列顯示方式 */
+/* 手機版導覽 */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -577,13 +588,14 @@ section {
     display: none;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(90deg, #7030d9 0%, #e260dc 100%);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+    background: rgba(255, 255, 255, 0.05);  /* ✅ 淡淡白透明背景 */
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
     padding: 16px 0;
+    margin-top: 12px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
   }
 
   nav.show {
@@ -591,24 +603,46 @@ section {
   }
 
   nav a {
-    margin: 10px 0;
-    font-size: 1.2rem;
+    margin: 8px 0;
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
   }
 
-  .dropdown-content {
-    position: static;
-    background: #fff;
-    box-shadow: none;
+  nav a:hover {
+    color: #ffe6ff;
+  }
+
+  .dropdown {
+    position: relative;
     width: 100%;
-  }
-
-  .dropdown-content a {
-    background: #eee;
-    margin: 4px 0;
     text-align: center;
   }
 
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+    padding-top: 6px;
+    transition: all 0.3s ease-in-out;
+  }
+
   .dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
+  }
+
+  .dropdown-content a {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    margin: 6px 12px;
+    padding: 8px 12px;
+    color: white;
+    font-size: 1rem;
+    transition: background 0.2s;
+  }
+
+  .dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    background-color: white;
   }
 }
