@@ -542,26 +542,37 @@ footer a {
     left: 20px;            /* 靠左對齊 */
     flex-direction: row;   /* 水平排列 */
     gap: 12px;             /* icon 間距 */
-    z-index: 999;
+    z-index: 998;
   }
 
-  .icon-btn {
-    flex: 1;
-    align-items: center;
-  }
-
-  .icon-btn img {
-    width: 48px;
+  .fixed-side-icons .icon-btn {
+    width: 48px;            /* icon 大小可依需求微調 */
     height: 48px;
   }
 
-  .icon-btn span {
-    font-size: 0.72rem;
-    white-space: nowrap;
-    background-color: white;
+  .fixed-side-icons .icon-btn img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .fixed-side-icons .icon-btn span {
+    font-size: 0.7rem;
     padding: 3px 6px;
+    background-color: white;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    /*margin-top: 4px;*/
   }
+
+  /*.icon-btn {
+    flex: 1;
+    align-items: center;
+  } */
+
+  /*.icon-btn img {
+    width: 48px;
+    height: 48px;
+  } */
 
 }
