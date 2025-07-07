@@ -16,15 +16,11 @@ window.addEventListener('scroll', function () {
 
   //icon
   if (window.innerWidth <= 768) {
-    const fixedTop = 450;  // 預設固定高度
-    let offset = 0;
-
-    // 如果 footer 接近，往上調整 icon 的位置
-    if (footerTop < fixedTop + 85) {
-      offset = fixedTop + 85 - footerTop;
+    if (footerTop < windowHeight - 80) {
+      sideIcons.style.bottom = (windowHeight - footerTop + 40) + 'px';
+    } else {
+      sideIcons.style.bottom = '40px'; // 初始對齊 top 鍵的高度
     }
-
-    sideIcons.style.top = (fixedTop - offset) + 'px';
   }
   else {
     const initialTop = 200;
@@ -63,7 +59,7 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-//768clickButton
+//clickButton
 document.addEventListener("DOMContentLoaded", function () {
     const dropdownToggle = document.querySelector(".dropdown-toggle");
     const dropdownContent = document.querySelector(".dropdown-content");
