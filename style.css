@@ -538,12 +538,11 @@ footer a {
 
   .fixed-side-icons {
     position: fixed;
-    flex-direction: row;     /* 改為水平排列 */
-    justify-content: flex-start; /* 可視需求調整左中右 */
-    top: 550px;              /* 初始位置依然保留 */
-    left: 10px;
-    transform: translateY(0); 
-    bottom: auto;
+    bottom: 40px;          /* 與 top 鍵相同高度 */
+    left: 20px;            /* 靠左對齊 */
+    flex-direction: row;   /* 水平排列 */
+    gap: 12px;             /* icon 間距 */
+    z-index: 999;
   }
 
   .icon-btn {
