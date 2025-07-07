@@ -16,7 +16,7 @@ window.addEventListener('scroll', function () {
 
   //icon
   if (window.innerWidth <= 768) {
-    if (footerTop < windowHeight - 80) {
+    if (footerTop < windowHeight - 60) {
       sideIcons.style.bottom = (windowHeight - footerTop + 40) + 'px';
     } else {
       sideIcons.style.bottom = '40px'; // 初始對齊 top 鍵的高度
