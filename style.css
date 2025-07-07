@@ -19,6 +19,19 @@ header h1 {
   letter-spacing: 2px;
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: 16px;
+  z-index: 1001;
+  cursor: pointer;
+}
+
 nav {
     margin: 10px 0;
 }
@@ -37,16 +50,38 @@ nav a:hover {
   border-bottom: 2px solid #fff;
 }
 
-.hero {
-  text-align: center;
-  background: #f0d6fb;
-  padding: 32px 12px 24px 12px;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.hero h2 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-  color: #a33f81 ;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 120px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  z-index: 1;
+  border-radius: 20px;
+  padding: 8px 0;
+}
+
+.dropdown-content a {
+  color: #555;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.95rem;
+}
+
+.dropdown-content a:hover {
+  background-color: #f4f1fa;
+  color: #f400d3;
+  border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 section {
@@ -63,6 +98,18 @@ section h2 {
   margin-top: 0;
   font-size: 1.35rem;
   margin-bottom: 18px;
+}
+
+.hero {
+  text-align: center;
+  background: #f0d6fb;
+  padding: 32px 12px 24px 12px;
+}
+
+.hero h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #a33f81 ;
 }
 
 .disease-info {
@@ -94,7 +141,7 @@ section h2 {
   font-size: 1rem;
   line-height: 1.6;
 }
-    
+
 .story-card {
   background: #f6feff ;
   border-left: 8px solid #1e448f ;
@@ -169,36 +216,6 @@ dd {
   margin-bottom: 8px;
 }
 
-footer {
-  text-align: center;
-  color: #fff;
-  font-size: 0.98rem;
-  padding: 24px 6px 18px 6px;
-  margin-top: 38px;
-  border-top: 1px solid #e3dfff;
-  background-color: #76068c;
-}
-
-footer a {
-  color: #f6ccff;
-  text-decoration: underline;
-}
-
-@media (max-width: 700px) {
-  .disease-info {
-    flex-direction: column;
-    gap: 12px;
-  }
-  section {
-    padding: 18px 4vw 26px 4vw;
-  }
-  .story-card {
-    flex-direction: column;
-    gap: 6px;
-    padding: 10px 10px 10px 14px;
-  }
-}
-
 #share {
   max-width: 900px;
   margin: 40px auto;
@@ -226,6 +243,7 @@ footer a {
   font-size: 1.2rem;
   margin-top: 24px;
   margin-bottom: 12px;
+  color: #7a60c7;
 }
 
 .share-content strong {
@@ -248,49 +266,6 @@ footer a {
   color: #8a228d;
   text-decoration: underline;
   font-weight: 500;
-}
-
-/* dropdown 主體 */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* dropdown 隱藏的內容 */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  min-width: 120px;
-  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-  z-index: 1;
-  border-radius: 20px;
-  padding: 8px 0;
-}
-
-/* dropdown 內容的連結樣式 */
-.dropdown-content a {
-  color: #555;
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 0.95rem;
-}
-
-.dropdown-content a:hover {
-  background-color: #f4f1fa;
-  color: #f400d3;
-  border-radius: 10px;
-}
-
-/* 滑鼠移上去才顯示 dropdown */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-#stories {
-  position: relative;
-  overflow: visible; /* 確保不裁切內部元素 */
 }
 
 #events {
@@ -321,8 +296,43 @@ footer a {
   font-size: 1.05rem;
 }
 
-section {
-  position: relative; /* 讓 TOP 鍵定位在 section 裡 */
+.fixed-side-icons {
+  position: fixed;
+  top: 200px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+
+.icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.icon-btn img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+
+.icon-btn:hover img {
+  transform: scale(1.08);
+}
+
+.icon-btn span {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
 }
 
 .back-to-top {
@@ -348,227 +358,34 @@ section {
   display: block;
 }
 
-/* 滑鼠移上去有微放大動畫 */
 .back-to-top:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* ✅ hover 陰影加強 */
 }
 
+footer {
+  text-align: center;
+  color: #fff;
+  font-size: 0.98rem;
+  padding: 24px 6px 18px 6px;
+  margin-top: 38px;
+  border-top: 1px solid #e3dfff;
+  background-color: #76068c;
+}
 
-@media (max-width: 480px) {
+footer a {
+  color: #f6ccff;
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
   header h1 {
     font-size: 1.5rem;
     padding: 0 12px;
-  }
-
-  nav a {
-    display: block;
-    margin: 8px 0;
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    background-color: transparent;
-    padding: 0;
-  }
-
-  .dropdown-content a {
-    background-color: #eee;
-    margin: 4px 0;
-    font-size: 1rem;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .disease-info > div {
-    padding: 12px;
-  }
-
-  .story-card {
-    padding: 12px;
-  }
-
-  .story-card img {
-    width: 48px;
-    height: 48px;
-  }
-
-  table {
-    font-size: 0.9rem;
-  }
-
-  th, td {
-    padding: 8px;
-  }
-
-  .donate-btn, .share-btn {
-    padding: 8px 20px;
-    font-size: 1rem;
-  }
-
-  .back-to-top {
-    font-size: 0.75rem;
-    padding: 8px 14px;
-  }
-}
-
-@media (max-width: 600px) {
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  nav a {
-    display: block;
-    font-size: 1.1rem;
-    margin: 4px 0;
-  }
-
-  header h1 {
-    font-size: 1.6rem;
-    padding: 0 16px;
     line-height: 1.4;
   }
-}
 
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    padding: 0 12px;
-  }
-}
-
-@media (max-width: 600px) {
-  .dropdown-content {
-    position: static;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-  }
-
-  .dropdown-content a {
-    background: #f1eeff;
-    border-radius: 8px;
-    margin: 6px 0;
-    text-align: center;
-  }
-}
-
-@media (max-width: 600px) {
-  section {
-    padding: 22px 6vw;
-  }
-
-  section h2 {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-
-  section p {
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 14px;
-  }
-
-  .hero p,
-  .hero ul li {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .hero ul {
-    font-size: 0.9rem;
-    margin: 16px 0;
-  }
-}
-
-/* 左側固定角色導覽 */
-.fixed-side-icons {
-  position: fixed;
-  top: 200px;              /* 初始位置（配合 JS 控制） */
-  left: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  z-index: 100;
-  transition: top 0.2s ease;  /* 平滑移動效果 */
-}
-
-/* 每個角色按鈕樣式 */
-.icon-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-}
-
-/* 圖片按鈕 */
-.icon-btn img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-  background: #fff;
-}
-
-/* 滑過放大效果 */
-.icon-btn:hover img {
-  transform: scale(1.08);
-}
-
-/* 下方文字提示 */
-.icon-btn span {
-  margin-top: 6px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
-}
-
-/* 手機版可調整大小與位置 */
-@media (max-width: 600px) {
-  .fixed-side-icons {
-    top: 240px;
-    left: 8px;
-    gap: 12px;
-  }
-
-  .icon-btn img {
-    width: 56px;
-    height: 56px;
-  }
-
-  .icon-btn span {
-    font-size: 0.85rem;
-  }
-}
-
-/* ☰ 漢堡按鈕 */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: white;
-  position: absolute;
-  top: 20px;
-  left: 16px;
-  z-index: 1001;
-  cursor: pointer;
-}
-
-/* 手機版導覽 */
-@media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
@@ -577,14 +394,14 @@ section {
     display: none;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05);  /* ✅ 淡淡白透明背景 */
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(8px);
     border-radius: 12px;
     padding: 16px 0;
     margin-top: 12px;
     width: 100%;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   }
 
   nav.show {
@@ -612,8 +429,22 @@ section {
   .dropdown-content {
     display: none;
     flex-direction: column;
-    padding-top: 6px;
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
     transition: all 0.3s ease-in-out;
+  }
+
+  .dropdown > a {
+  display: block;
+  margin: 5px 0;
+  padding: 5px 0;
+  font-size: 1.1rem;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
   }
 
   .dropdown:hover .dropdown-content {
@@ -627,6 +458,7 @@ section {
     padding: 8px 12px;
     color: white;
     font-size: 1rem;
+    text-align: center;
     transition: background 0.2s;
   }
 
@@ -634,4 +466,103 @@ section {
     background: rgba(255, 255, 255, 0.25);
     background-color: white;
   }
+
+  section {
+    padding: 22px 6vw;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  .hero p,
+  .hero ul li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .hero ul {
+    font-size: 0.9rem;
+    margin: 16px 0;
+  }
+
+  .disease-info {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .disease-info > div {
+    padding: 12px;
+  }
+
+  .story-card {
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+  }
+
+  .story-card img {
+    width: 48px;
+    height: 48px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .donate-btn, .share-btn {
+    padding: 8px 20px;
+    font-size: 1rem;
+  }
+
+  .back-to-top {
+    width: 38px;
+    height: 38px;
+    bottom: 24px;
+    right: 16px;
+    font-size: 0.75rem;
+    padding: 0;
+  }
+
+  .fixed-side-icons {
+    position: fixed;
+    flex-direction: row;     /* 改為水平排列 */
+    justify-content: flex-start; /* 可視需求調整左中右 */
+    top: 470px;              /* 初始位置依然保留 */
+    left: 10px;
+    transform: translateY(0); 
+    bottom: auto;
+  }
+
+  .icon-btn {
+    flex: 1;
+    align-items: center;
+  }
+
+  .icon-btn img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .icon-btn span {
+    font-size: 0.72rem;
+    white-space: nowrap;
+    background-color: white;
+    padding: 3px 6px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
 }
