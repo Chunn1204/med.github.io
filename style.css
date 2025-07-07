@@ -540,7 +540,7 @@ footer a {
     position: fixed;
     flex-direction: row;     /* 改為水平排列 */
     justify-content: flex-start; /* 可視需求調整左中右 */
-    top: 470px;              /* 初始位置依然保留 */
+    top: 450px;              /* 初始位置依然保留 */
     left: 10px;
     transform: translateY(0); 
     bottom: auto;
