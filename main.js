@@ -15,12 +15,18 @@ window.addEventListener('scroll', function () {
   adjustTopButton(topBtn, footer, windowHeight);
 
   //icon
-  if (window.innerWidth <= 768) {
-    if (footerTop < windowHeight - 80) {
-      sideIcons.style.bottom = (windowHeight - footerTop + 40) + 'px';
-    } else {
-      sideIcons.style.bottom = '40px'; // 初始對齊 top 鍵的高度
+   if (window.innerWidth <= 768) {
+    const initialTop = 630; // 初始 top
+    let translateY = 0;
+
+    if (footerTop < windowHeight - 60) {
+      const offset = windowHeight - footerTop;
+      translateY = -offset;
     }
+
+    sideIcons.style.top = initialTop + 'px';
+    sideIcons.style.transform = `translateY(${translateY}px)`;
+    sideIcons.style.bottom = 'auto'; // 確保 bottom 無效化
   }
   else {
     const initialTop = 200;
